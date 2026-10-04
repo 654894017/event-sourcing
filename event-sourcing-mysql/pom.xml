@@ -4,19 +4,19 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.damon.cqrs</groupId>
-        <artifactId>cqrs</artifactId>
+        <groupId>com.damon</groupId>
+        <artifactId>event-sourcing</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>cqrs-event-mysql</artifactId>
-    <name>cqrs-event-store-mysql</name>
+    <artifactId>event-sourcing-mysql</artifactId>
+    <name>event-sourcing-mysql</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.damon.cqrs</groupId>
-            <artifactId>cqrs-core</artifactId>
+            <groupId>com.damon</groupId>
+            <artifactId>event-sourcing-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.damon.cqrs</groupId>
-    <artifactId>cqrs</artifactId>
+    <groupId>com.damon</groupId>
+    <artifactId>event-sourcing</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
@@ -65,21 +65,6 @@
                 <version>2.1</version>
             </dependency>
             <dependency>
-                <groupId>com.damon.cqrs</groupId>
-                <artifactId>cqrs-api</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.damon.cqrs</groupId>
-                <artifactId>cqrs-event-mysql</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.damon.cqrs</groupId>
-                <artifactId>cqrs-core</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
                 <version>2.9.3</version>
@@ -110,14 +95,29 @@
                 <artifactId>HikariCP</artifactId>
                 <version>7.1.0</version>
             </dependency>
+            <dependency>
+                <groupId>com.damon</groupId>
+                <artifactId>event-sourcing-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.damon</groupId>
+                <artifactId>event-sourcing-mysql</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.damon</groupId>
+                <artifactId>event-sourcing-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
-        <module>cqrs-api</module>
-        <module>cqrs-core</module>
-        <module>cqrs-sample</module>
-        <module>cqrs-event-mysql</module>
+        <module>event-sourcing-api</module>
+        <module>event-sourcing-core</module>
+        <module>event-sourcing-sample</module>
+        <module>event-sourcing-mysql</module>
     </modules>
     <dependencies>
         <dependency>

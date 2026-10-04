@@ -4,10 +4,10 @@
          xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.damon.cqrs</groupId>
-        <artifactId>cqrs</artifactId>
+        <groupId>com.damon</groupId>
+        <artifactId>event-sourcing</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>cqrs-api</artifactId>
-    <name>cqrs-api</name>
+    <artifactId>event-sourcing-api</artifactId>
+    <name>event-sourcing-api</name>
 </project>

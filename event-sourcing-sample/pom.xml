@@ -3,17 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.damon.cqrs</groupId>
-        <artifactId>cqrs</artifactId>
+        <groupId>com.damon</groupId>
+        <artifactId>event-sourcing</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>cqrs-sample</artifactId>
-    <name>cqrs-sample</name>
+    <artifactId>event-sourcing-sample</artifactId>
+    <name>event-sourcing-sample</name>
     <packaging>pom</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <modules>
-        <module>cqrs-sample-generic-test</module>
+        <module>event-sourcing-sample-generic-test</module>
     </modules>
 </project>

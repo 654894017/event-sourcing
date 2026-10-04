@@ -4,19 +4,19 @@
          xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.damon.cqrs</groupId>
-        <artifactId>cqrs-sample</artifactId>
+        <groupId>com.damon</groupId>
+        <artifactId>event-sourcing-sample</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>cqrs-sample-generic-test</artifactId>
+    <artifactId>event-sourcing-sample-generic-test</artifactId>
     <name>cqrs-sample-generic-test</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.damon.cqrs</groupId>
-            <artifactId>cqrs-event-mysql</artifactId>
+            <groupId>com.damon</groupId>
+            <artifactId>event-sourcing-mysql</artifactId>
         </dependency>
     </dependencies>
 </project>
