@@ -42,7 +42,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
-    <logger name="com.damon.cqrs.event.EventCommittingMailBox" level="INFO">
+    <logger name="com.damon.eventsourcing.event.EventCommittingMailBox" level="INFO">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
         <appender-ref ref="error"/>

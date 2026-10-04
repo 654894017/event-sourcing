@@ -1,7 +1,7 @@
-import com.damon.cqrs.sample.red_packet.api.command.RedPacketCreateCommand;
-import com.damon.cqrs.sample.red_packet.api.command.RedPacketGrabCommand;
-import com.damon.cqrs.sample.red_packet.domain.service.RedPacketCommandService;
-import com.damon.cqrs.utils.IdWorker;
+import com.damon.eventsourcing.sample.red_packet.api.command.RedPacketCreateCommand;
+import com.damon.eventsourcing.sample.red_packet.api.command.RedPacketGrabCommand;
+import com.damon.eventsourcing.sample.red_packet.domain.service.RedPacketCommandProcessor;
+import com.damon.eventsourcing.utils.IdWorker;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

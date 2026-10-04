@@ -1,4 +1,4 @@
-CREATE TABLE cqrs.`event_offset`
+CREATE TABLE `event_offset`
 (
     `id`               bigint                                                 NOT NULL AUTO_INCREMENT,
     `event_offset_id`  bigint                                                 NOT NULL,
@@ -7,10 +7,10 @@ CREATE TABLE cqrs.`event_offset`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
-INSERT INTO `cqrs`.`event_offset`(`id`, `event_offset_id`, `data_source_name`, `table_name`)
+INSERT INTO `event_offset`(`id`, `event_offset_id`, `data_source_name`, `table_name`)
 VALUES (1, 0, 'ds0', 'event_stream_0');
 
-CREATE TABLE cqrs.`event_stream_0`
+CREATE TABLE `event_stream_0`
 (
     `id`                       bigint                                                 NOT NULL AUTO_INCREMENT,
     `aggregate_root_type_name` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
