@@ -50,7 +50,7 @@ public class WeixinRedPacket extends AggregateRoot {
     private BigDecimal minMoney;
 
     public WeixinRedPacket() {
-        
+
     }
 
     /**

@@ -19,7 +19,7 @@ public class EventCommittingContext {
     private Long aggregateId;
 
     private String aggregateTypeName;
-    
+
     private EventCommittingMailBox mailBox;
 
     private AggregateRoot snapshot;

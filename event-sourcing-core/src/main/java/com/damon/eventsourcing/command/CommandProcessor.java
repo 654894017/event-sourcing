@@ -1,5 +1,6 @@
 package com.damon.eventsourcing.command;
 
+import cn.hutool.core.collection.CollUtil;
 import com.damon.eventsourcing.EventSourcingContext;
 import com.damon.eventsourcing.cache.IAggregateCache;
 import com.damon.eventsourcing.config.AggregateSlotLock;
@@ -75,14 +76,18 @@ public abstract class CommandProcessor<T extends AggregateRoot> implements IComm
             snapshot = ReflectUtils.newInstance(aggregateType);
             snapshot.setId(aggregateId);
         }
-        int startVersion = snapshot != null ? snapshot.getVersion() + 1 : 1;
+        int startVersion = snapshot.getVersion() + 1;
         long loadStartTime = System.currentTimeMillis();
         List<Event> events = eventStore.load(
                 aggregateId, aggregateType, startVersion, Integer.MAX_VALUE, shardingParams
         );
+        if (CollUtil.isEmpty(events)) {
+            throw new AggregateNotFoundException(aggregateId);
+        }
         log.info("aggregate id: {} , type: {}, start version : {}, end version : {}, load costTime : {}",
                 aggregateId, aggregateType, startVersion, Integer.MAX_VALUE, System.currentTimeMillis() - loadStartTime);
         long replayStartTime = System.currentTimeMillis();
+
         snapshot.replayEvents(events);
         log.info("aggregate id: {} , type: {}, start version : {}, end version : {}, replay costTime : {}",
                 aggregateId, aggregateType, startVersion, Integer.MAX_VALUE, System.currentTimeMillis() - replayStartTime);
@@ -176,9 +181,6 @@ public abstract class CommandProcessor<T extends AggregateRoot> implements IComm
         }
         try {
             T aggregate = load(aggregateId, this.getAggregateType(), command.getShardingParams());
-            if (aggregate == null) {
-                throw new AggregateNotFoundException(aggregateId);
-            }
             R result = function.apply(aggregate);
             if (aggregate.getUncommittedEvent() == null) {
                 return CompletableFuture.completedFuture(result);

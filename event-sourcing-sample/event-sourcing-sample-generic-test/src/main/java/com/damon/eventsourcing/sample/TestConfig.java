@@ -7,12 +7,10 @@ import com.damon.eventsourcing.config.EventSourcingConfig;
 import com.damon.eventsourcing.event.EventCommittingService;
 import com.damon.eventsourcing.event_store.DataSourceMapping;
 import com.damon.eventsourcing.event_store.DefaultEventShardingRouting;
-import com.damon.eventsourcing.event_store.MysqlEventOffset;
 import com.damon.eventsourcing.event_store.MysqlEventStore;
 import com.damon.eventsourcing.recovery.AggregateRecoveryProcessor;
 import com.damon.eventsourcing.snapshot.AggregateSnapshootProcessor;
 import com.damon.eventsourcing.snapshot.IAggregateSnapshootProcessor;
-import com.damon.eventsourcing.store.IEventOffset;
 import com.damon.eventsourcing.store.IEventStore;
 import com.google.common.collect.Lists;
 import com.zaxxer.hikari.HikariDataSource;
@@ -40,7 +38,6 @@ public class TestConfig {
 
         DefaultEventShardingRouting route = new DefaultEventShardingRouting();
         IEventStore store = new MysqlEventStore(list, 8, route);
-        IEventOffset offset = new MysqlEventOffset(list);
         IAggregateSnapshootProcessor aggregateSnapshootService = new AggregateSnapshootProcessor(1, 6);
         IAggregateCache aggregateCache = new CaffeineAggregateCache(1024 * 1024, 60);
 
